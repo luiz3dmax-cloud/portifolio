@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projetista | Ideias que se tornam projeto</title>
+<meta name="description" content="Projetista especializado em cenografia, decoração de Natal, parques temáticos, buffets infantis, shoppings, lojas, stands, pizzarias e hamburguerias temáticas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --verde-escuro:#0F3B3B;
+ --dourado:#C49A6C;
+ --dourado-claro:#E8C9A8;
+ --fundo-creme:#FAF6F0;
+ --texto-escuro:#1F3838;
+ --texto-claro:#5A7070;
+ --branco:#FFFFFF;
+ --wa:#1fc46b;
+ --sombra-suave:rgba(15,59,59,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{
+ font-family:"DM Sans",sans-serif;
+ background:var(--fundo-creme);
+ color:var(--texto-escuro);
+ line-height:1.6;
+}
+.container{width:min(1180px,92%);margin:0 auto}
+
+/* HEADER */
+.header{
+ position:fixed;top:0;left:0;right:0;height:74px;z-index:1000;
+ background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);
+ border-bottom:1px solid rgba(196,154,108,0.15);transition:.3s
+}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--dourado),#B88A5C);border-radius:10px;display:grid;place-items:center;box-shadow:0 4px 10px rgba(196,154,108,0.2)}
+.logo-icon svg{width:26px;height:26px;fill:white}
+.logo-text span{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--verde-escuro)}
+.navlinks{display:flex;align-items:center;gap:30px;font-size:12px;font-weight:800;letter-spacing:.4px}
+.navlinks > a{position:relative;padding:10px 0;border:0;background:none;color:var(--texto-escuro);font-weight:800;font-size:12px;cursor:pointer;text-decoration:none}
+.navlinks > a::after{
+  content:"";position:absolute;left:0;bottom:4px;width:0;height:2px;
+  background:var(--dourado);transition:.25s
+}
+.navlinks > a:hover::after,.navlinks > a.active::after{width:100%}
+.social{display:flex;gap:8px}
+.social a{
+  width:32px;height:32px;border:1px solid var(--dourado);border-radius:50%;
+  display:grid;place-items:center;font-size:12px;transition:.2s;color:var(--verde-escuro);text-decoration:none
+}
+.social a:hover{background:var(--dourado);color:#fff}
+.hamb{display:none;border:0;background:transparent;font-size:27px;color:var(--verde-escuro);cursor:pointer}
+.hamb .close-icon{display:none}
+
+/* HERO */
+.hero{
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:100px 20px 60px;
+ background:var(--fundo-creme);
+}
+.hero-card{
+ display:flex;
+ align-items:center;
+ gap:45px;
+ background:var(--branco);
+ padding:55px 65px;
+ border-radius:24px;
+ box-shadow:0 12px 40px rgba(15,59,59,0.06);
+ max-width:1050px;
+ width:100%;
+ border:1px solid rgba(196,154,108,0.12);
+}
+.hero-logo-bloco{
+ flex:0 0 180px;
+ width:180px;
+ height:180px;
+ border-radius:28px;
+ background:linear-gradient(135deg,var(--dourado),#B88A5C);
+ display:grid;
+ place-items:center;
+ box-shadow:0 10px 30px rgba(196,154,108,0.25);
+ flex-shrink:0;
+}
+.hero-logo-bloco svg{width:110px;height:110px;fill:var(--branco)}
+.hero-conteudo{flex:1}
+.hero-nome{
+ font-family:"Playfair Display",serif;
+ font-size:clamp(3rem,5vw,4.4rem);
+ color:var(--verde-escuro);
+ line-height:1.1;
+ margin-bottom:12px;
+ font-weight:700;
+ letter-spacing:0.5px;
+}
+.hero-slogan{
+ font-size:clamp(1.1rem,2vw,1.55rem);
+ color:var(--texto-claro);
+ font-weight:400;
+}
+
+/* CURRÍCULO */
+.curriculo{
+ padding:80px 20px;
+ background:var(--branco);
+}
+.curriculo-titulo{
+ font-family:"Playfair Display",serif;
+ font-size:2.2rem;
+ color:var(--verde-escuro);
+ text-align:center;
+ margin-bottom:50px;
+ position:relative;
+}
+.curriculo-titulo::after{
+ content:"";
+ display:block;
+ width:70px;
+ height:3px;
+ background:var(--dourado);
+ margin:12px auto 0;
+ border-radius:2px;
+}
+.curriculo-conteudo{
+ max-width:900px;
+ margin:0 auto;
+ display:grid;
+ gap:40px;
+}
+.curriculo-bloco{
+ background:var(--fundo-creme);
+ padding:35px 40px;
+ border-radius:16px;
+ border-left:4px solid var(--dourado);
+ box-shadow:0 6px 20px rgba(15,59,59,0.04);
+}
+.curriculo-bloco h3{
+ font-family:"Playfair Display",serif;
+ font-size:1.3rem;
+ color:var(--verde-escuro);
+ margin-bottom:20px;
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
+.curriculo-bloco h3 svg{width:22px;height:22px;fill:var(--dourado)}
+.curriculo-item{
+ margin-bottom:22px;
+ padding-bottom:22px;
+ border-bottom:1px dashed rgba(196,154,108,0.25);
+}
+.curriculo-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.curriculo-item h4{font-size:1rem;color:var(--verde-escuro);margin-bottom:4px}
+.curriculo-item span{font-size:0.85rem;color:var(--dourado);font-weight:600}
+.curriculo-item p{font-size:0.9rem;color:var(--texto-claro);margin-top:8px}
+.lista-areas{list-style:none;padding:0;margin-top:10px}
+.lista-areas li{padding:8px 0;border-bottom:1px dashed rgba(196,154,108,0.15);color:var(--texto-claro)}
+.lista-areas li:last-child{border-bottom:none}
+.lista-areas li strong{color:var(--verde-escuro)}
+.habilidades{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.habilidade{
+ background:rgba(196,154,108,0.1);
+ color:var(--verde-escuro);
+ padding:8px 16px;
+ border-radius:20px;
+ font-size:0.85rem;
+ font-weight:500;
+}
+.botao-download{
+ display:inline-flex;align-items:center;gap:8px;
+ background:linear-gradient(135deg,var(--dourado),#B88A5C);
+ color:#fff;padding:14px 28px;border-radius:12px;
+ text-decoration:none;font-weight:700;transition:.3s;
+ box-shadow:0 6px 18px rgba(196,154,108,0.25);
+ margin-top:10px;
+}
+.botao-download:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(196,154,108,0.3)}
+
+/* GALERIA */
+.galeria{
+ padding:70px 20px 90px;
+ background:var(--fundo-creme);
+}
+.galeria-titulo{
+ font-family:"Playfair Display",serif;
+ font-size:2rem;
+ color:var(--verde-escuro);
+ text-align:center;
+ margin-bottom:45px;
+}
+.galeria-grade{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:22px 18px;
+}
+.gallery-item{
+ position:relative;
+ overflow:hidden;
+ border-radius:12px;
+ background:var(--branco);
+ cursor:pointer;
+ border:1px solid rgba(196,154,108,0.15);
+ box-shadow:0 5px 18px rgba(15,59,59,0.06);
+ transition:transform .3s ease,box-shadow .3s ease;
+}
+.gallery-item:hover{
+ transform:translateY(-4px);
+ box-shadow:0 14px 30px rgba(196,154,108,0.15);
+}
+.gallery-photo{
+ position:relative;
+ aspect-ratio:4/3;
+ overflow:hidden;
+ background:rgba(196,154,108,0.05);
+}
+.gallery-photo::after{
+  content:"AMPLIAR";
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  padding:7px 10px;
+  border-radius:4px;
+  background:rgba(15,59,59,0.9);
+  color:#fff;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1px;
+  opacity:0;
+  transform:translateY(5px);
+  transition:.25s;
+}
+.gallery-item:hover .gallery-photo::after{opacity:1;transform:none}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.gallery-item:hover img{transform:scale(1.045)}
+.gallery-info{
+  position:relative;
+  min-height:94px;
+  padding:12px 12px 13px 68px;
+  background:var(--branco);
+  border-top:1px solid rgba(196,154,108,0.15);
+}
+.gallery-badge{
+  position:absolute;
+  left:12px;
+  top:12px;
+  width:38px;
+  height:38px;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--dourado),#B88A5C);
+  color:#fff;
+  box-shadow:0 5px 12px rgba(196,154,108,0.2);
+}
+.gallery-badge svg{width:20px;height:20px}
+.gallery-title{
+  margin:0 0 9px;
+  color:var(--verde-escuro);
+  font-size:12px;
+  font-weight:800;
+}
+.gallery-meta{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+}
+.gallery-meta span{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  min-width:0;
+  padding:0 9px;
+  border-left:1px solid rgba(196,154,108,0.15);
+  color:var(--texto-claro);
+  font-size:8px;
+  line-height:1.35;
+}
+.gallery-meta span:first-child{border-left:0;padding-left:0}
+.gallery-meta strong{
+  display:block;
+  color:var(--verde-escuro);
+  font-size:7px;
+  font-weight:500;
+}
+
+/* LIGHTBOX */
+.lightbox{
+ position:fixed;inset:0;z-index:3000;background:rgba(15,35,35,0.96);
+ display:none;align-items:center;justify-content:center;padding:35px
+}
+.lightbox.open{display:flex}
+.lightbox-conteudo{position:relative;width:min(1200px,94vw);height:min(86vh,850px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px}
+.lightbox-img{
+ max-width:calc(100% - 110px);max-height:75vh;width:auto;height:auto;
+ object-fit:contain;border-radius:5px;box-shadow:0 20px 60px rgba(0,0,0,0.45)
+}
+.lightbox-descricao{
+ color:#fff;
+ text-align:center;
+ max-width:calc(100% - 60px);
+ padding:10px 20px;
+}
+.lightbox-descricao h3{font-size:1.2rem;color:var(--dourado-claro);margin-bottom:5px}
+.lightbox-descricao p{font-size:0.95rem;color:#ccc}
+.lb-btn{
+ position:absolute;width:48px;height:48px;border:1px solid rgba(255,255,255,0.25);
+ border-radius:50%;background:rgba(255,255,255,0.1);color:#fff;
+ font-size:30px;cursor:pointer;display:grid;place-items:center;transition:.2s
+}
+.lb-btn:hover{background:rgba(255,255,255,0.22)}
+.lb-prev{left:0}.lb-next{right:0}
+.lb-close{top:-8px;right:0;font-size:28px}
+.counter{
+ position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);
+ color:#d8dfdd;font-size:12px;letter-spacing:1px
+}
+
+/* CONTATO */
+.contato{
+ padding:60px 20px;
+ background:var(--fundo-creme);
+}
+.contato-titulo{
+ font-family:"Playfair Display",serif;
+ font-size:2rem;
+ color:var(--verde-escuro);
+ text-align:center;
+ margin-bottom:40px;
+}
+.contato-grade{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:25px;
+ max-width:800px;
+ margin:0 auto;
+}
+.contato-card{
+ background:var(--branco);
+ padding:25px;
+ border-radius:14px;
+ text-align:center;
+ border-left:3px solid var(--dourado);
+ box-shadow:0 6px 18px rgba(15,59,59,0.04);
+}
+.contato-card h3{color:var(--verde-escuro);margin-bottom:10px;font-size:1rem}
+.contato-card p,.contato-card a{color:var(--texto-claro);font-size:0.95rem;text-decoration:none;display:block;margin:4px 0}
+.contato-card a:hover{color:var(--dourado)}
+
+/* RODAPÉ */
+footer{
+ background:var(--verde-escuro);
+ color:var(--branco);
+ padding:35px 20px;
+ text-align:center;
+ font-size:0.9rem;
+ color:#B0B8B0;
+}
+footer p{margin:5px 0}
+footer a{color:var(--dourado-claro);text-decoration:none}
+
+/* WHATSAPP FLUTUANTE */
+.float-wa{
+ position:fixed;right:22px;bottom:22px;width:56px;height:56px;z-index:1100;
+ border-radius:50%;display:grid;place-items:center;background:var(--wa);color:#fff;
+ box-shadow:0 10px 28px rgba(0,0,0,0.25);transition:.2s;animation:pulse 2s infinite;
+}
+.float-wa:hover{transform:scale(1.08);animation:none}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+ .header{height:64px}
+ .hamb{display:block}
+ .navlinks{
+  display:none;position:absolute;top:64px;left:0;right:0;
+  padding:20px 5%;background:var(--branco);flex-direction:column;align-items:flex-start;gap:5px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.1);max-height:calc(100vh - 64px);overflow:auto;
+ }
+ .navlinks.open{display:flex}
+ .social{display:none}
+}
+@media(max-width:850px){
+ .hero-card{flex-direction:column;text-align:center;padding:40px 30px;gap:30px}
+ .hero-logo-bloco{width:150px;height:150px;border-radius:24px}
+ .curriculo-bloco{padding:25px 20px}
+}
+@media(max-width:560px){
+ .galeria-grade{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .gallery-info{padding-left:58px;min-height:103px}
+ .gallery-badge{left:9px;top:10px;width:34px;height:34px}
+ .gallery-meta{grid-template-columns:1fr}
+ .gallery-meta span{border-left:0;border-top:1px solid rgba(196,154,108,0.15);padding:5px 0}
+ .lightbox{padding:15px}.lightbox-conteudo{height:80vh}
+ .lightbox-img{max-width:100%;max-height:calc(100% - 100px)}
+ .lb-btn{width:42px;height:42px}.lb-prev{left:3px}.lb-next{right:3px}.lb-close{top:3px;right:3px}
+ .float-wa{right:16px;bottom:16px}
+}
+@media(max-width:480px){
+ .hero-card{padding:30px 20px}
+ .hero-nome{font-size:2.4rem}
+ .galeria-grade{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER COM O SEU LOGO -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="Projetista - início">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100">
+          <path d="M25 25 L25 75 L75 75" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M50 20 L80 50 L70 60 L40 30 Z" fill="white"/>
+          <ellipse cx="78" cy="62" rx="18" ry="22" fill="white"/>
+          <ellipse cx="78" cy="58" rx="6" ry="10" fill="#C49A6C"/>
+        </svg>
+      </div>
+      <div class="logo-text"><span>Projetista</span></div>
+    </a>
+    <nav class="navlinks" id="nav" aria-label="Navegação principal">
+      <a href="index.html">PROJETOS</a> <a href="#contato">CONTATO</a>
+    </nav>
+    <div class="social">
+      <a href="https://wa.me/5511965964829" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.097-.471-.146-.67.147-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.37-.012-.57-.012-.2 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.21 3.074.148.198 2.096 3.2 5.077 4.487.709.302 1.262.48 1.694.625.766.227 1.46.195 2.071.118.63-.074 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.903-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      </a>
+      <a href="mailto:luiz3dmax@gmail.com" aria-label="E-mail">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+    <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-icon">☰</span><span class="close-icon">×</span>
+    </button>
+  </div>
+</header>
+
+
+<!-- CURRÍCULO COMPLETO -->
+<section class="curriculo" id="curriculo">
+  <h2 class="curriculo-titulo">Meu Currículo</h2>
+  <div class="curriculo-conteudo">
+
+    <!-- DADOS PESSOAIS -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        Dados de Contato
+      </h3>
+      <p><strong>Luiz — Projetista</strong></p>
+      <p>📧 luiz3dmax@gmail.com</p>
+      <p>💬 (11) 96596-4829</p>
+      <p>📍 Taboão da Serra — SP</p>
+    </div>
+
+    <!-- PERFIL PROFISSIONAL -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        Perfil Profissional
+      </h3>
+      <p style="color:var(--texto-claro);line-height:1.8;">
+        Projetista com ampla experiência em criação e desenvolvimento de ambientes temáticos, comerciais e estruturas expositivas, atuando com foco em cenografia, decoração e projetos personalizados de A a Z. Transformo conceitos criativos em soluções visuais e funcionais, do desenho técnico à apresentação final, com domínio de modelagem 3D, renderização e detalhamento executivo.
+      </p>
+      <p style="color:var(--texto-claro);line-height:1.8;margin-top:10px;">
+        Especializado em projetos que unem criatividade, funcionalidade e identidade visual, entregando projetos prontos para execução para os mais variados segmentos.
+      </p>
+    </div>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+        Áreas de Atuação
+      </h3>
+      <ul class="lista-areas">
+        <li><strong>✅ Cenografia</strong> — Projetos de cenários para eventos, apresentações, espaços culturais e cenários temporários, com foco em impacto visual, ergonomia e viabilidade construtiva.</li>
+        <li><strong>✅ Decoração de Natal</strong> — Projetos completos de decoração natalina: painéis, arranjos, iluminação, árvores, presépios e temas personalizados para praças, shoppings, fachadas e ambientes internos.</li>
+        <li><strong>✅ Parques Temáticos</strong> — Desenvolvimento de áreas temáticas, elementos cenográficos, sinalização, revestimentos e concepção visual para atrações, áreas de circulação e pontos de experiência do visitante.</li>
+        <li><strong>✅ Buffet Infantil</strong> — Projetos de ambientes lúdicos, coloridos e seguros: salões de festa, espaços de brincadeira, áreas de atendimento, fachadas e decoração temática por faixa etária e temas específicos.</li>
+        <li><strong>✅ Shoppings</strong> — Projetos de decoração sazonal, vitrines, praças de alimentação, corredores, áreas de convívio e campanhas promocionais, alinhados com a identidade do empreendimento e fluxo de público.</li>
+        <li><strong>✅ Lojas</strong> — Arquitetura comercial e identidade visual: fachadas, vitrines, disposição de produtos, iluminação, cores e materiais que valorizam a marca e a experiência do cliente.</li>
+        <li><strong>✅ Stands e Quiosques</strong> — Projetos completos para feiras, eventos e praças de alimentação: estruturas modulares, exposição de produtos, atendimento, armazenamento, identidade visual, circulação e instalações otimizadas. Soluções funcionais, atraentes e adaptadas ao espaço disponível.</li>
+        <li><strong>✅ Pizzarias Temáticas</strong> — Ambientes que contam uma história: decoração, mobiliário, iluminação, revestimentos e detalhes que criam atmosfera única e memorável para o cliente.</li>
+        <li><strong>✅ Hamburguerias Temáticas</strong> — Projetos com personalidade marcante: conceito visual, paleta de cores, materiais, sinalização, decoração e ambientação alinhada ao estilo da marca e público-alvo.</li>
+      </ul>
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+        Habilidades e Ferramentas
+      </h3>
+      <p style="color:var(--texto-claro);margin-bottom:10px;">
+        <strong>Modelagem 3D e Renderização:</strong> 3ds Max, Lumion e Vray<br>
+        <strong>Desenho Técnico:</strong> AutoCAD — plantas, cortes, elevações, detalhamento de estruturas e listas de materiais<br>
+        <strong>Projetos Específicos:</strong> Dimensionamento de stands, quiosques, layouts de feiras e cálculo de ocupação de área<br>
+        <strong>Edição e Apresentação:</strong> CorelDRAW, Photoshop<br>
+        <strong>Fluxo Completo:</strong> Conceito → Croqui → Modelo 3D → Imagens realistas → Detalhamento → Acompanhamento<br>
+        <strong>Extra:</strong> Leitura de projetos de terceiros, criação de identidade visual, atendimento direto ao cliente
+      </p>
+      <div class="habilidades">
+        <span class="habilidade">3ds Max</span>
+        <span class="habilidade">AutoCAD</span>
+        <span class="habilidade">Lumion</span>
+        <span class="habilidade">CorelDRAW</span>
+        <span class="habilidade">Photoshop</span>
+        <span class="habilidade">Desenho Técnico</span>
+        <span class="habilidade">Tematizaçáo</span>
+      </div>
+    </div>
+
+    <!-- EXPERIÊNCIA -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+        Experiência Profissional
+      </h3>
+      <div class="curriculo-item">
+        <h4>Projetista Autônomo</h4>
+        <span>2016 — Atual</span>
+        <p>Desenvolvimento de projetos personalizados para cenografia, decoração de Natal, parques temáticos, buffets infantis, shoppings, lojas, stands, quiosques, pizzarias e hamburguerias temáticas. Criação de imagens realistas para aprovação, detalhamento técnico para execução e acompanhamento. Projetos de stands e quiosques com foco em funcionalidade, exposição de produtos e conformidade com normas de eventos e shoppings.</p>
+      </div>
+      <div class="curriculo-item">
+        <h4>Desenhista — Natal Arte  Cenografia e Decoração</h4>
+        <span>2003 — 2016</span>
+        <p>Desenvolvimento de desenhos técnicos, plantas e detalhamentos para execução de decoração natalina, cenários para eventos,, quiosques e ambientes comerciais. Apoio na criação de catálogos e apresentações. Colaboração em projetos para shoppings, praças, feiras e espaços públicos.</p>
+      </div>
+    </div>
+
+    <!-- FORMAÇÃO -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+        Formação
+      </h3>
+      <div class="curriculo-item">
+        <h4>Design Gráfico — Formação Técnica</h4>
+        <p>Desenho técnico, perspectiva, teoria das cores, materiais, iluminação, ergonomia e projetos de exposição.</p>
+      </div>
+      <div class="curriculo-item">
+        <h4>Modelagem 3D e Renderização — Capacitação Profissional</h4>
+        <p>3ds Max, Lumion  e técnicas de apresentação de projetos.</p>
+      </div>
+      <div class="curriculo-item">
+        <h4>3D MAX e Vray — Curso intensivo&nbsp; — Capacitação Profissional</h4>
+        <p>Modelagem e renderização.&nbsp;</p>
+      </div>
+    </div>
+
+    <!-- DIFERENCIAIS -->
+    <div class="curriculo-bloco">
+      <h3>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        Diferenciais
+      </h3>
+      <ul class="lista-areas">
+        <li>✅ Projetos com identidade visual marcante</li>
+        <li>✅ Stands e quiosques funcionais, atraentes e prontos para montagem</li>
+        <li>✅ Cumprimento de prazos</li>
+        <li>✅ Comunicação clara durante todo o processo</li>
+        <li>✅ Projetos prontos para execução</li>
+        <li>✅ Adaptação ao orçamento do cliente</li>
+        <li>✅ Atendimento em todo o Brasil</li>
+      </ul>
+      <p style="text-align:center;margin-top:20px;font-style:italic;color:var(--dourado);font-weight:600;">"Ideias que se tornam projeto"</p>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <div style="text-align:center;margin-top:10px;">
+      <a href="file:///C|/Users/Luiz/Downloads/curriculo-luiz.pdf" class="botao-download" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Baixar Currículo Completo
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-conteudo">
+    <button class="lb-btn lb-close" id="lbClose">&times;</button>
+    <button class="lb-btn lb-prev" id="lbPrev">&#10094;</button>
+    <img src="" alt="" class="lightbox-img" id="lbImg">
+    <div class="lightbox-descricao" id="lbDesc">
+      <h3 id="lbTitulo"></h3>
+      <p id="lbDetalhes"></p>
+    </div>
+    <button class="lb-btn lb-next" id="lbNext">&#10095;</button>
+    <div class="counter" id="lbCounter"></div>
+  </div>
+</div>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <h2 class="contato-titulo">Entre em Contato</h2>
+  <div class="contato-grade">
+    <div class="contato-card">
+      <h3>📧 E-mail</h3>
+      <a href="mailto:luiz3dmax@gmail.com">luiz3dmax@gmail.com</a>
+    </div>
+    <div class="contato-card">
+      <h3>💬 WhatsApp</h3>
+      <a href="https://wa.me/5511965964829" target="_blank">(11) 96596-4829</a>
+    </div>
+    <div class="contato-card">
+      <h3>📍 Localização</h3>
+      <p>Taboão da Serra — SP</p>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <p><strong>Projetista</strong> — Ideias que se tornam projeto</p>
+  <p>📧 luiz3dmax@gmail.com | 💬 (11) 96596-4829</p>
+  <p>Taboão da Serra — SP</p>
+  <p style="margin-top:10px;font-size:0.8rem;">© 2026 — Todos os direitos reservados</p>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5511965964829" target="_blank" class="float-wa" aria-label="Enviar mensagem no WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.097-.471-.146-.67.147-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.37-.012-.57-.012-.2 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.21 3.074.148.198 2.096 3.2 5.077 4.487.709.302 1.262.48 1.694.625.766.227 1.46.195 2.071.118.63-.074 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.903-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- SCRIPTS -->
+<script>
+// MENU MÓVEL
+const hamb = document.getElementById('hamb');
+const nav = document.getElementById('nav');
+hamb.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  hamb.setAttribute('aria-expanded', nav.classList.contains('open'));
+  const isOpen = nav.classList.contains('open');
+  hamb.querySelector('.menu-icon').style.display = isOpen ? 'none' : 'block';
+  hamb.querySelector('.close-icon').style.display = isOpen ? 'block' : 'none';
+});
+
+// LIGHTBOX
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbTitulo = document.getElementById('lbTitulo');
+const lbDetalhes = document.getElementById('lbDetalhes');
+const lbCounter = document.getElementById('lbCounter');
+const lbClose = document.getElementById('lbClose');
+const lbPrev = document.getElementById('lbPrev');
+const lbNext = document.getElementById('lbNext');
+const items = document.querySelectorAll('.gallery-item');
+
+let currentIndex = 0;
+
+// Dados das imagens
+const data = Array.from(items).map((item, i) => ({
+  src: item.querySelector('img').src,
+  alt: item.querySelector('img').alt,
+  titulo: item.querySelector('.gallery-title').textContent,
+  meta: Array.from(item.querySelectorAll('.gallery-meta span')).map(s => {
+    const strong = s.querySelector('strong')?.textContent || '';
+    const text = s.childNodes[s.childNodes.length - 1].textContent.trim();
+    return `${strong}: ${text}`;
+  }).join(' | ')
+}));
+
+// Abrir lightbox
+items.forEach((item, idx) => {
+  const abrir = () => {
+    currentIndex = idx;
+    atualizarLightbox();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  item.addEventListener('click', abrir);
+  item.addEventListener('keydown', e => e.key === 'Enter' && abrir());
+});
+
+// Atualizar conteúdo
+function atualizarLightbox() {
+  const d = data[currentIndex];
+  lbImg.src = d.src;
+  lbImg.alt = d.alt;
+  lbTitulo.textContent = d.titulo;
+  lbDetalhes.textContent = d.meta;
+  lbCounter.textContent = `${currentIndex + 1} / ${data.length}`;
+}
+
+// Fechar
+lbClose.addEventListener('click', () => {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+});
+lightbox.addEventListener('click', e => e.target === lightbox && (lightbox.classList.remove('open'), document.body.style.overflow = ''));
+
+// Navegação
+lbPrev.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + data.length) % data.length;
+  atualizarLightbox();
+});
+lbNext.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % data.length;
+  atualizarLightbox();
+});
+
+// Teclado
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+  if (e.key === 'ArrowLeft') lbPrev.click();
+  if (e.key === 'ArrowRight') lbNext.click();
+});
+
+// Scroll suave + header
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Navegação âncora suave
+document.querySelectorAll('.navlinks a').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#') && href.length > 1) {
+      e.preventDefault();
+      const alvo = document.querySelector(href);
+      if (alvo) alvo.scrollIntoView({behavior: 'smooth'});
+      nav.classList.remove('open');
+      hamb.setAttribute('aria-expanded', 'false');
+      hamb.querySelector('.menu-icon').style.display = 'block';
+      hamb.querySelector('.close-icon').style.display = 'none';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
